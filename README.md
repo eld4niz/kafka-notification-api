@@ -31,7 +31,37 @@ Start your local Kafka server
 - Run cmd/consumer/consumer.go - Starts Consumer Server
 - Run cmd/producer/producer.go - Starts Producer Server
 
-## 4. Project Structure
+## 4. Sending and Receiving Notifications 
+
+- 8080: Producer Port
+```bash
+curl -X POST http://localhost:8080/send -d "fromID=2&toID=1&message=your message"
+```
+ - Response:
+```json
+{"message":"Notification sent successfully!"}
+```
+
+- 8081: Consumer Port
+```bash
+http://localhost:8081/notifications/{user_id}
+```
+
+Response:
+```json
+{
+"notifications":
+    [
+      {
+        "from": {"id":3,"name":"Eldar"},
+        "to": {"id":4,"name":"Farid"},
+        "message": "necesen bratan"
+      }
+    ]
+}
+```
+
+## 5. Project Structure
 
 - cmd/
   - consumer/
