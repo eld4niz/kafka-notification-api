@@ -1,4 +1,4 @@
-# Real-time notification API built with Golang
+# Kafka Real-Time Notification API
 
 This project demonstrates a real-time notification system implemented in Golang, utilizing Apache Kafka for message processing. The Kafka server is set up using Docker containers for easy deployment.
 
