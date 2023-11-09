@@ -2,7 +2,7 @@
 
 This project demonstrates a real-time notification system implemented in Golang, utilizing Apache Kafka for message processing. The Kafka server is set up using Docker containers for easy deployment.
 
-## Prerequisites
+## 1. Prerequisites
 
 Before running this project, make sure you have the following installed:
 
