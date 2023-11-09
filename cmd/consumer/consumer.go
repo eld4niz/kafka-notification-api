@@ -22,7 +22,6 @@ const (
 	KafkaServerAddress = "localhost:9092"
 )
 
-// ============== HELPER FUNCTIONS ==============
 var ErrNoMessagesFound = errors.New("no messages found")
 
 func getUserIDFromRequest(ctx *gin.Context) (string, error) {
@@ -33,7 +32,6 @@ func getUserIDFromRequest(ctx *gin.Context) (string, error) {
 	return userID, nil
 }
 
-// ====== NOTIFICATION STORAGE ======
 type UserNotifications map[string][]models.Notification
 
 type NotificationStore struct {
@@ -54,7 +52,6 @@ func (ns *NotificationStore) Get(userID string) []models.Notification {
 	return ns.data[userID]
 }
 
-// ============== KAFKA RELATED FUNCTIONS ==============
 type Consumer struct {
 	store *NotificationStore
 }

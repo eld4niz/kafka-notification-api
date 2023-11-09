@@ -20,7 +20,6 @@ const (
 	KafkaTopic         = "notifications"
 )
 
-// ============== HELPER FUNCTIONS ==============
 var ErrUserNotFoundInProducer = errors.New("user not found")
 
 func findUserByID(id int, users []models.User) (models.User, error) {
@@ -41,7 +40,6 @@ func getIDFromRequest(formValue string, ctx *gin.Context) (int, error) {
 	return id, nil
 }
 
-// ============== KAFKA RELATED FUNCTIONS ==============
 func sendKafkaMessage(producer sarama.SyncProducer,
 	users []models.User, ctx *gin.Context, fromID, toID int) error {
 	message := ctx.PostForm("message")
@@ -122,10 +120,10 @@ func setupProducer() (sarama.SyncProducer, error) {
 
 func main() {
 	users := []models.User{
-		{ID: 1, Name: "Emma"},
-		{ID: 2, Name: "Bruno"},
-		{ID: 3, Name: "Rick"},
-		{ID: 4, Name: "Lena"},
+		{ID: 1, Name: "Eldaniz"},
+		{ID: 2, Name: "Elgun"},
+		{ID: 3, Name: "Eldar"},
+		{ID: 4, Name: "Farid"},
 	}
 
 	producer, err := setupProducer()
